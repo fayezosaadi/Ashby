@@ -10,7 +10,7 @@ const defaultQuestionType = FieldTypes.TEXT
 
 /**
  *
- * Model Region - Server Side - Owner
+ * Model Region - Owner
  */
 
 interface IForm {
@@ -31,6 +31,13 @@ interface IForm {
   send(email: string[]): void
 }
 
+/**
+ *
+ * We can add more improvements on the Question configuration such as
+ * Allowed file types, limits on files uploads and max allowed size
+ * Ability to add orders for each Question
+ *
+ */
 interface IQuestion {
   drop(): void
 
@@ -307,7 +314,7 @@ class SelectDropDownOptionList implements IDropdownOptionList {
 
 /**
  *
- * Model Region - Server Side - End User
+ * Model Region - End User
  */
 
 interface ISubmission {
@@ -326,7 +333,7 @@ interface IAnswer {
 
 class Submission implements ISubmission {
 
-  private form: Form
+  private readonly form: Form
   private answers: Answer[]
 
   constructor(form: Form, answers: Answer[] = []) {
@@ -351,7 +358,7 @@ class Submission implements ISubmission {
   public submit(): void {
     console.info('Form submission is in progress...')
 
-    // Todo: check required fields
+    // Todo: check required fields before submission
   }
 
 }
@@ -458,3 +465,19 @@ class FileUpload extends Field {
     super.setValue('uploaded-file-url')
   }
 }
+
+// Use the API
+// Model Region - Server Side - Owner
+const form = new Form()
+const question = new Question(FieldTypes.TEXT)
+form.addQuestion(question)
+form.send(['user@gamil.com'])
+
+// Model Region - End User
+const submission = new Submission(form)
+
+// View-controller regions - Client side - End User
+const textField = new ShortText()
+textField.setValue('Typescript is awesome!')
+submission.addAnswer(textField.getValue(), question)
+submission.submit()
