@@ -29,7 +29,9 @@ The UI is a single page application for both Owner and End User and has use case
 - Confirm submit form
 - ...etc
 
-### High‐Level Design Class Diagram for Model region(Owner and End User functionality)
+![high-level-design](https://user-images.githubusercontent.com/26156279/167331658-ebbe2a38-21db-4e86-8ced-db0c2c28ed70.png)
+
+### High‐Level Design Class Diagram for Model region(Owner and End User business logic/functionality)
 
 ![high-level-design](https://user-images.githubusercontent.com/26156279/167329405-b8d8ea11-b111-41bb-8791-3deaf71634ac.png)
 

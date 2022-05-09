@@ -207,7 +207,6 @@ class Question implements IQuestion {
       this.checkBoxOption = new CheckBoxOption()
     } else if (this.fieldType === FieldTypes.DROPDOWN) {
       this.selectDropDownOptionList = new SelectDropDownOptionList()
-      console.log('here', this.selectDropDownOptionList)
 
     } else {
       this.checkBoxOption = null
@@ -459,4 +458,3 @@ class FileUpload extends Field {
     super.setValue('uploaded-file-url')
   }
 }
-
