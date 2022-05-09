@@ -404,10 +404,6 @@ interface IField {
 abstract class Field implements IField {
   private value: string = ''
 
-  constructor() {
-    // this.type = type
-  }
-
   public setValue(value: string): void {
     this.value = value
   }
