@@ -1,0 +1,16 @@
+{
+  "name": "ashby",
+  "version": "1.0.0",
+  "description": "Ashby project",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run compile && node main.js",
+    "compile": "npx tsc main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.6.4"
+  }
+}
